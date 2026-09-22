@@ -115,7 +115,7 @@
   }
   .nav{
     display:flex; align-items:center; justify-content:space-between;
-    padding:15px 24px; max-width:var(--maxw); margin:0 auto;
+    padding:15px 24px; max-width:var(--maxw); margin:0 auto; position:relative;
   }
   .brand{
     display:flex; align-items:center; gap:9px;
@@ -137,14 +137,17 @@
   }
   @media (max-width:1000px){
     .navlinks{
-      position:fixed; inset:60px 0 0 0; background:var(--ice-0);
-      flex-direction:column; padding:20px 24px; gap:2px; overflow-y:auto;
+      position:fixed; top:66px; right:16px; left:auto;
+      background:var(--white); border-radius:var(--radius-lg);
+      box-shadow:0 20px 45px -18px rgba(14,42,56,0.35);
+      flex-direction:column; gap:0; padding:8px 0;
+      width:200px; max-width:calc(100vw - 32px);
       transform:translateY(-8px); opacity:0; pointer-events:none;
       transition:transform var(--dur), opacity var(--dur);
-      border-top:1px solid var(--line);
+      z-index:150;
     }
     .navlinks.open{transform:translateY(0); opacity:1; pointer-events:auto;}
-    .navlinks a{display:block; padding:16px 12px; font-size:1.1rem; border-bottom:1px solid var(--line); border-radius:0;}
+    .navlinks a{display:block; text-align:center; padding:15px 20px; font-size:1rem; border-radius:0;}
     .navtoggle{display:block;}
   }
 
